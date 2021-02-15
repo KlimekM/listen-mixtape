@@ -5,12 +5,125 @@
     flex-direction: column;
     height: 100vh;
     justify-content: center;
+    width: 100vw;
+  }
+
+  .tree-logo {
+    cursor: pointer;
+    height: 50px;
+    left: 15px;
+    position: absolute;
+    top: 15px;
+    width: 50px;
+  }
+
+  .hype-text {
+    align-items: center;
+    color: var(--color-font-yellow);
+    display: flex;
+    height: 3rem;
+    justify-content: center;
+    width: 100%;
+    white-space: nowrap;
+  }
+
+  .hype-text span {
+    animation: topToBottom 4.5s infinite;
+    font-size: var(--font-size-36);
+    position: absolute;
+    opacity: 0;
+  }
+
+  .hype-text span:nth-child(2) {
+    animation-delay: 1.5s;
+  }
+
+  .hype-text span:nth-child(3) {
+    animation-delay: 3s;
+  }
+
+  @keyframes topToBottom {
+    0%,
+    33% {
+      opacity: 1;
+    } /* visible for 1.5s */
+    33.01%,
+    100% {
+      opacity: 0;
+    } /* hidden for 3s */
+  }
+
+  .album-container {
+    align-items: center;
+    border: 1px solid var(--color-font-yellow);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    max-height: 90%;
+    max-width: 90%;
+  }
+
+  .troll-face {
+    background-color: var(--color-text);
+    clip-path: circle(55% at 55% 50%);
+    display: none;
+    position: fixed;
+  }
+
+  .rotate {
+    animation: rotation 1.55s infinite alternate;
+    display: block;
+  }
+
+  @keyframes rotation {
+    from {
+      height: 10%;
+      opacity: 0;
+      transform: rotate(0deg);
+    }
+    to {
+      height: 50%;
+      opacity: 1;
+      transform: rotate(359deg);
+    }
   }
 
   .album-cover {
-    box-shadow: 0 0 30px hsl(60, 100%, 50%);
-    margin: 0 auto;
-    max-height: 80%;
-    max-width: 80%;
+    box-shadow: 0 0 3px var(--color-font-yellow);
+    cursor: pointer;
+    max-height: 90%;
+    max-width: 90%;
+  }
+
+  .download-button {
+    all: unset;
+    border: 1px solid var(--color-font-yellow);
+    border-radius: 10px;
+    color: var(--color-font-yellow);
+    font-size: var(--font-size-30);
+    margin-top: 30px;
+    padding: 14px 0;
+    text-align: center;
+    width: 60%;
+  }
+
+  .download-button:hover {
+    background-color: var(--color-font-yellow);
+    color: var(--color-background);
+    cursor: pointer;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .album-container {
+    margin-top: 20px;
+    max-height: 70%;
+    max-width: 70%;
+  }
+
+  .download-button {
+    margin-top: 20px;
+    width: 30%;
   }
 }
