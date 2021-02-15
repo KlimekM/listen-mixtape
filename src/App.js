@@ -26,6 +26,10 @@ function App() {
   };
 
   const handleTreeOrAlbumClick = () => {
+    if (!treeAudioPlayerRef.current.paused) {
+      treeAudioPlayerRef.current.currentTime = 0;
+    }
+
     treeAudioPlayerRef.current.play();
   };
 
